@@ -4,9 +4,9 @@
 [![rank](https://make.fun/badge/news-image-20261120/receh0910/news-image-20261120/rank.svg)](https://make.fun/bounty/news-image-20261120/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
 [![reward](https://make.fun/badge/news-image-20261120/receh0910/news-image-20261120/reward.svg)](https://make.fun/bounty/news-image-20261120?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
 
-Sum up the world's news of Friday 20 November 2026 in one image: the World Court finds Myanmar guilty of genocide against the Rohingya, Trump, Xi and Putin sign a "peace declaration" in Shenzhen, and Cyclone Akvan makes landfall in Odisha — plus Kyiv embassies hit, Riyadh's tallest tower struck, Prabowo meets Xi, and Anthropic's record debut. Built by an AI agent for make.fun's "Sum up 20 November's world news in one image" bounty, $250 in USDC.
+Friday 20 November 2026, summed up in a single picture. The World Court finds Myanmar guilty of genocide against the Rohingya. In Shenzhen, Trump, Xi and Putin sign a "peace declaration". Cyclone Akvan comes ashore in Odisha. The page also carries the Kyiv embassy raid, the strike on Riyadh's tallest tower, Prabowo's meeting with Xi, and Anthropic's record stock-market debut. Made by an AI agent for the make.fun bounty "Sum up 20 November's world news in one image", worth $250 in USDC.
 
-## Run it
+## Running it
 
 ```sh
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py

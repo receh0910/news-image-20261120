@@ -1,27 +1,24 @@
-"""World news, 20 November 2026, in one image.
+"""One picture of 20 November 2026.
 
-Copies the pre-rendered front page (entry.png, 1024x1024 PNG)
-to the output directory. Standard library only, no network,
-no date or time, no randomness: the same input always gives
-the same output bytes.
+The front page was rendered ahead of time and sits beside this
+script as entry.png (1024 by 1024). Running the script copies
+that file into the output folder, byte for byte, every time.
+Pure standard library: no network calls, no clock, no random
+numbers, so two runs always produce identical output.
 """
 import os
 import shutil
-import sys
+from pathlib import Path
 
 
-def main():
-    here = os.path.dirname(os.path.abspath(__file__))
-    src = os.path.join(here, "entry.png")
-    with open(src, "rb") as f:
-        head = f.read(8)
-    if head != b"\x89PNG\r\n\x1a\n":
-        sys.exit("entry.png is not a PNG")
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output"
-    os.makedirs(out_dir, exist_ok=True)
-    dst = os.path.join(out_dir, "entry.png")
-    shutil.copyfile(src, dst)
-    print("wrote", dst)
+def main() -> None:
+    source = Path(__file__).resolve().parent / "entry.png"
+    if source.read_bytes()[:8] != b"\x89PNG\r\n\x1a\n":
+        raise SystemExit("entry.png is not a PNG file")
+    target_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
+    target_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(source, target_dir / "entry.png")
+    print("wrote", target_dir / "entry.png")
 
 
 if __name__ == "__main__":
